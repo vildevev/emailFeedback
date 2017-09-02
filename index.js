@@ -7,7 +7,7 @@ app = express();
 // req = object representing the incoming request
 // res = object representing the outgoing response 
 app.get('/', (req, res) => {
-	res.send({hi: 'there'});
+	res.send({bye: 'buddy'});
 });
 
 // dynamic port binding for Heroku deployment
