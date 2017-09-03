@@ -1,14 +1,12 @@
 // use commonjs modules in the backend
 const express = require('express'),
-app = express();
+passport = require('passport'),
+GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-// route handler: is watching for incoming HTTP requests with the 'get' method
-// instructs express, people that are visiting the '/' route
-// req = object representing the incoming request
-// res = object representing the outgoing response 
-app.get('/', (req, res) => {
-	res.send({bye: 'buddy'});
-});
+const app = express();
+
+// creates a new instance of the passport Google Strategy
+passport.use(new GoogleStrategy());
 
 // dynamic port binding for Heroku deployment
 const PORT = process.env.PORT || 5000;
