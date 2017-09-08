@@ -1,6 +1,8 @@
 // use commonjs modules in the backend
 const express = require('express'),
+keys = require('./config/keys');
 mongoose = require('mongoose');
+require('./models/user');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
